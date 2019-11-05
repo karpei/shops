@@ -1,0 +1,15 @@
+<form #form="ngForm" autocomplete="off" (submit)="UpdateItem()">
+    <div class="form-group">
+        <label>Name</label>
+        <input name="name" #name="ngModel" [(ngModel)]="service.FormData.name" class="form-control" required>
+        <div class="validation-error" *ngIf="name.invalid && name.touched " >This field is Required</div>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea name="description" #description="ngModel" [(ngModel)]="service.FormData.description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-warning">SUBMIT</button>
+        <button (click)="newItem()" *ngIf="service.FormData.id" type="button" class="btn btn-lg btn-block btn-success">New Item</button>
+    </div>
+</form>

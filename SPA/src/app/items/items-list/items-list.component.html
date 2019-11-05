@@ -1,0 +1,7 @@
+<table class="table table-hover">
+    <tr *ngFor="let item of service.ShopItems.items">
+        <td (click)="updateItem(item)">{{item.name}}</td>
+        <td (click)="updateItem(item)">{{item.description}}</td>
+        <td><button (click)="deleteItem(item.id)" class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+</table>

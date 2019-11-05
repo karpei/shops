@@ -1,0 +1,22 @@
+<div class="jumbtron">
+    <h1 class="dispay-4 text-center">Shops Info</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Adress</th>
+                    <th scope="col">Working Hours</th>
+                    <th scope="col"></th>
+                </tr>
+                <tr *ngFor="let shop of service.list">
+                    <td scope="row">{{shop.name}}</td>
+                    <td>{{shop.adress}}</td>
+                    <td>{{shop.wHours}}</td>
+                    <td><button class="btn btn-sm btn-outline-info" [routerLink]="['shop', shop.id]">View Items</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
